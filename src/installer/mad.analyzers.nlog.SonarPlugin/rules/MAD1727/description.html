@@ -1,0 +1,24 @@
+<h2>Log message template should use PascalCase for named placeholders</h2>
+
+<p>
+  A named placeholder used in an NLog message template should follow PascalCase, a naming
+  convention where the first letter of each compound word is capitalised
+  (e.g. <code>{UserId}</code> instead of <code>{userId}</code> or <code>{user_id}</code>).
+</p>
+
+<p>
+  This naming convention is strongly recommended for structured logging because each
+  named placeholder becomes a property name in the structured log event.  Consistent
+  PascalCase property names improve searchability and query consistency in log aggregation
+  tools such as Seq, Elastic, or Loki.
+</p>
+
+<h3>Non-compliant code</h3>
+<pre>
+logger.Info("User {userId} logged in from {ipAddress}", userId, ip);
+</pre>
+
+<h3>Compliant code</h3>
+<pre>
+logger.Info("User {UserId} logged in from {IpAddress}", userId, ip);
+</pre>

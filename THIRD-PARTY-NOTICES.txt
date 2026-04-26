@@ -1,0 +1,5 @@
+This project includes modified portions of code from the .NET analyzers projects, 
+licensed under the MIT License:
+https://github.com/dotnet/sdk
+
+© Microsoft Corporation and contributors.

@@ -1,0 +1,35 @@
+<h2>Avoid inline serialization of objects in log message arguments</h2>
+
+<p>
+  Calling <code>JsonSerializer.Serialize()</code>, <code>JsonConvert.SerializeObject()</code>,
+  or <code>.ToString()</code> on a complex object before passing it to an NLog logging
+  method produces a flat string and bypasses NLog's structured capture pipeline.
+</p>
+
+<p>
+  Instead, pass the original object and use the <code>{@Property}</code> destructuring
+  prefix to let NLog capture the object's structure, or the <code>{$Property}</code>
+  prefix to force explicit stringification via NLog's own serialisation pipeline.
+  For consistent behaviour across all call sites, register a custom
+  <code>IValueFormatter</code> with NLog's configuration.
+</p>
+
+<p>
+  Serialising inline also incurs the full serialisation cost even when the configured
+  log level is disabled, which can impact performance in hot paths.
+</p>
+
+<h3>Non-compliant code</h3>
+<pre>
+logger.Info("Order received: {Order}", JsonSerializer.Serialize(order));
+logger.Info("Customer: {Customer}", customer.ToString());
+</pre>
+
+<h3>Compliant code</h3>
+<pre>
+// Let NLog destructure the object (preserves structure in structured sinks)
+logger.Info("Order received: {@Order}", order);
+
+// Force NLog stringification via its own pipeline
+logger.Info("Order received: {$Order}", order);
+</pre>

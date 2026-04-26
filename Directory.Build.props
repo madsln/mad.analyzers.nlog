@@ -1,0 +1,19 @@
+<Project>
+    <PropertyGroup>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <RepositoryRoot>$(MSBuildThisFileDirectory)</RepositoryRoot>
+        <OutputPath>$(RepositoryRoot)build\bin\$(Configuration)\$(MSBuildProjectName)</OutputPath>
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <CommonVersion>1.0.0</CommonVersion>
+
+        <Version>$(CommonVersion)</Version>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="$(MSBuildThisFileFullPath)" Link="Targets\Directory.Build.props" />
+    </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+{
+  "title": "Log message template should be a static expression",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "10min"
+  },
+  "tags": ["nlog", "logging", "convention"],
+  "defaultSeverity": "Minor"
+}

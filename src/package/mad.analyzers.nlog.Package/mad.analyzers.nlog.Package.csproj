@@ -1,0 +1,67 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>mad.analyzers.nlog</PackageId>
+    <PackageVersion>$(CommonVersion)</PackageVersion>
+    <Authors>madsln</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/madsln/mad.analyzers.nlog</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/madsln/mad.analyzers.nlog</RepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Description>Analyzers for common mistakes using NLog</Description>
+    <Copyright>Copyright madsln</Copyright>
+    <PackageTags>analyzer roslyn nlog logging structured-logging code-smell</PackageTags>
+    <DevelopmentDependency>true</DevelopmentDependency>
+    <NoPackageAnalysis>true</NoPackageAnalysis>
+
+    <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- <ProjectReference Include="$(RepositoryRoot)src\codefixes\mad.analyzers.common.CodeFixes\mad.analyzers.common.CodeFixes.csproj" /> -->
+    <ProjectReference Include="$(RepositoryRoot)src\analyzer\mad.analyzers.nlog.analyzer\mad.analyzers.nlog.analyzer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- lokale DLL ins Paket unter analyzers/dotnet/cs packen -->
+    <None Include="$(RepositoryRoot)build\bin\$(Configuration)\mad.analyzers.nlog.analyzer\netstandard2.0\mad.analyzers.nlog.analyzer.dll">
+      <Pack>true</Pack>
+      <PackagePath>analyzers/dotnet/cs/</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="tools\*.ps1" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(RepositoryRoot)LICENSE.txt" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
+    <None Include="$(RepositoryRoot)THIRD-PARTY-NOTICES.txt" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
+    <None Include="$(RepositoryRoot)RELEASE_NOTES.md" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
+  </ItemGroup>
+
+  <Target Name="_ReadReleaseNotes" BeforeTargets="GenerateNuspec">
+    <ReadLinesFromFile File="$(RepositoryRoot)RELEASE_NOTES.md">
+      <Output TaskParameter="Lines" ItemName="_ReleaseNoteLines" />
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <PackageReleaseNotes>@(_ReleaseNoteLines, '%0a')</PackageReleaseNotes>
+    </PropertyGroup>
+  </Target>
+
+  <Target Name="_AddAnalyzersToOutput">
+    <ItemGroup>
+      <TfmSpecificPackageFile Include="$(OutputPath)\mad.analyzers.nlog.analyzer.dll" PackagePath="analyzers/dotnet/cs" />
+      <!--<TfmSpecificPackageFile Include="$(OutputPath)\mad.analyzers.nlog.CodeFixes.dll" PackagePath="analyzers/dotnet/cs" />-->
+    </ItemGroup>
+  </Target>
+
+</Project>

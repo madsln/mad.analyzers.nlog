@@ -1,0 +1,11 @@
+{
+  "title": "Invalid braces in log message template",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "5min"
+  },
+  "tags": ["nlog", "logging", "bug-risk"],
+  "defaultSeverity": "Major"
+}

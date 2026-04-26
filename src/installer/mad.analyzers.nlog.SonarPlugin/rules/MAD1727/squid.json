@@ -1,0 +1,11 @@
+{
+  "title": "Log message template named placeholders should use PascalCase",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "2min"
+  },
+  "tags": ["nlog", "logging", "convention"],
+  "defaultSeverity": "Minor"
+}

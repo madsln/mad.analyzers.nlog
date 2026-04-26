@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/Analyzer/">
+    <Project Path="src/analyzer/mad.analyzers.nlog.analyzer/mad.analyzers.nlog.analyzer.csproj" />
+  </Folder>
+  <Folder Name="/Library/">
+    <Project Path="src/lib/mad.analyzers.common/mad.analyzers.common.csproj" />
+  </Folder>
+  <Folder Name="/Test/">
+    <Project Path="src/test/mad.analyzers.nlog.Test/mad.analyzers.nlog.Test.csproj" />
+  </Folder>
+  <Project Path="src/demo/mad.analyzers.nlog.demo/mad.analyzers.nlog.demo.csproj" />
+</Solution>

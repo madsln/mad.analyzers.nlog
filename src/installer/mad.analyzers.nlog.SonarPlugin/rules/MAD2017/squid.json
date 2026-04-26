@@ -1,0 +1,11 @@
+{
+  "title": "Log message template parameter count does not match supplied arguments",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "5min"
+  },
+  "tags": ["nlog", "logging", "bug-risk"],
+  "defaultSeverity": "Major"
+}

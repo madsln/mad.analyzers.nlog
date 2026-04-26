@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MAD1312_Description" xml:space="preserve">
+    <value>Exceptions should be passed as first parameter for the stacktrace to be available in the logs.</value>
+  </data>
+  <data name="MAD1312_Message" xml:space="preserve">
+    <value>Exceptions should be passed as the first parameter to the log call.</value>
+  </data>
+  <data name="MAD1312_Title" xml:space="preserve">
+    <value>PassExceptionAsFirstParameter</value>
+  </data>
+  <data name="MAD1727_Description" xml:space="preserve">
+    <value>A named placeholder used with ILogger should be PascalCase, a naming convention where the first letter of each compound word in a name is capitalized. This naming convention is recommended for structured logging, where each named placeholder is used as a property name in the structured data.</value>
+  </data>
+  <data name="MAD1727_Message" xml:space="preserve">
+    <value>Use PascalCase for named placeholders</value>
+  </data>
+  <data name="MAD1727_Title" xml:space="preserve">
+    <value>UsePascalCaseForNamedPlaceholders</value>
+  </data>
+  <data name="MAD2017_Description" xml:space="preserve">
+    <value>The number of parameters supplied to the logging method should match the number of placeholders contained in the log message.</value>
+  </data>
+  <data name="MAD2017_Message" xml:space="preserve">
+    <value>Template parameter count does not match with supplied parameters. Expected {0} but got {1}.</value>
+  </data>
+  <data name="MAD2017_Title" xml:space="preserve">
+    <value>ParameterCountMismatch</value>
+  </data>
+  <data name="MAD2023_Description" xml:space="preserve">
+    <value>Logging message templates use curly braces { and } to denote named placeholders for values. Invalid brace usage in message templates can result in runtime exceptions or unexpected logging behavior</value>
+  </data>
+  <data name="MAD2023_Message" xml:space="preserve">
+    <value>Invalid braces in message template</value>
+  </data>
+  <data name="MAD2023_Title" xml:space="preserve">
+    <value>InvalidBracesInMessageTemplate</value>
+  </data>
+  <data name="MAD2253_Description" xml:space="preserve">
+    <value>Named placeholders in the logging message template should not be composed of only numeric characters.</value>
+  </data>
+  <data name="MAD2253_Message" xml:space="preserve">
+    <value>Named placeholders should not be numeric values</value>
+  </data>
+  <data name="MAD2253_Title" xml:space="preserve">
+    <value>NamedPlaceholdersShouldNotBeNumeric</value>
+  </data>
+  <data name="MAD2254_Description" xml:space="preserve">
+    <value>When performing logging, it's desirable to preserve the structure of the log (including placeholder names) along with the placeholder values. Preserving this information allows for better observability and search in log aggregation and monitoring software.</value>
+  </data>
+  <data name="MAD2254_Message" xml:space="preserve">
+    <value>Template should be a static expression</value>
+  </data>
+  <data name="MAD2254_Title" xml:space="preserve">
+    <value>TemplateShouldBeStatic</value>
+  </data>
+  <data name="MAD2255_Description" xml:space="preserve">
+    <value>Exceptions should be passed first to the logger method to enhance root cause analysis for an exception by including proper exception processing with the ability to also print stacktraces.</value>
+  </data>
+  <data name="MAD2255_Message" xml:space="preserve">
+    <value>Exceptions should be passed first to the logger method to be able to include the stacktrace in the log.</value>
+  </data>
+  <data name="MAD2255_Title" xml:space="preserve">
+    <value>ExceptionsShouldBePassedFirst</value>
+  </data>
+  <data name="MAD2256_Description" xml:space="preserve">
+    <value>Calling JsonSerializer.Serialize(), JsonConvert.SerializeObject(), or .ToString() on a complex object before passing it to a NLog logging method produces a flat string and bypasses NLog's structured capture pipeline. Use the '{@Property}' placeholder prefix to let NLog destructure the object, or the '{$Property}' prefix to force explicit stringification. For consistent serialization across all call sites, register a custom IValueFormatter with NLog's configuration. Serializing inline also incurs the serialization cost even when the log level is disabled.</value>
+  </data>
+  <data name="MAD2256_Message" xml:space="preserve">
+    <value>Argument '{0}' is serialized inline. Pass the original object and use the '{{@Property}}' destructuring syntax or register a custom NLog IValueFormatter instead.</value>
+  </data>
+  <data name="MAD2256_Title" xml:space="preserve">
+    <value>AvoidInlineSerializationInLogArguments</value>
+  </data>
+</root>

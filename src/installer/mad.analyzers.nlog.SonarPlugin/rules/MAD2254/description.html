@@ -1,0 +1,25 @@
+<h2>Log message template should be a static (compile-time constant) expression</h2>
+
+<p>
+  The message template passed to an NLog logging method should be a static string
+  literal or a <code>const</code> expression.  Building a template dynamically at
+  runtime (e.g. using string concatenation or interpolation) destroys the structured
+  metadata — the placeholder names are lost and log aggregation tools can no longer
+  index individual properties consistently.
+</p>
+
+<p>
+  Dynamic templates also prevent static analysis (including this analyser) from
+  validating placeholder counts and names at compile time.
+</p>
+
+<h3>Non-compliant code</h3>
+<pre>
+string template = $"Processing order {{OrderId}} for {customerType} customer";
+logger.Info(template, orderId);
+</pre>
+
+<h3>Compliant code</h3>
+<pre>
+logger.Info("Processing order {OrderId} for {CustomerType} customer", orderId, customerType);
+</pre>

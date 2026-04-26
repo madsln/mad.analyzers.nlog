@@ -1,0 +1,11 @@
+{
+  "title": "Avoid inline serialization of objects in log message arguments",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "10min"
+  },
+  "tags": ["nlog", "logging", "performance"],
+  "defaultSeverity": "Minor"
+}

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <!-- Placeholder project – no compiled output. Exists solely to surface
+         SonarQube plugin artefacts (PluginManifest.xml, rules/) in the
+         Visual Studio Solution Explorer. -->
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <OutputType>Library</OutputType>
+    <NoWarn>$(NoWarn);NU1505</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="PluginManifest.xml" />
+    <None Include="build.ps1" />
+    <None Include="rules\**\*" />
+  </ItemGroup>
+
+</Project>

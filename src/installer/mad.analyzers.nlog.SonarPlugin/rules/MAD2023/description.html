@@ -1,0 +1,26 @@
+<h2>Invalid braces in log message template</h2>
+
+<p>
+  NLog message templates use curly braces <code>{</code> and <code>}</code> to denote
+  named placeholders for structured values.  Unbalanced or incorrectly nested braces are
+  not valid placeholder syntax and can cause runtime exceptions or completely unexpected
+  logging behaviour.
+</p>
+
+<p>Common mistakes include:</p>
+<ul>
+  <li>Using a single opening brace without a closing brace: <code>"Value is {Value"</code></li>
+  <li>Using a single closing brace without an opening brace: <code>"Value is Value}"</code></li>
+  <li>Mixing format strings from <code>string.Format</code> with NLog template syntax</li>
+</ul>
+
+<h3>Non-compliant code</h3>
+<pre>
+logger.Info("Processing {OrderId} failed}", orderId);   // extra closing brace
+logger.Info("Processing {OrderId failed", orderId);    // missing closing brace
+</pre>
+
+<h3>Compliant code</h3>
+<pre>
+logger.Info("Processing {OrderId} failed", orderId);
+</pre>

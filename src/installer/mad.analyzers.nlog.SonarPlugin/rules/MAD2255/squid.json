@@ -1,0 +1,11 @@
+{
+  "title": "Exception should be passed as the first argument to the log method",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant/Issue",
+    "constantCost": "5min"
+  },
+  "tags": ["nlog", "logging", "exception-handling"],
+  "defaultSeverity": "Major"
+}

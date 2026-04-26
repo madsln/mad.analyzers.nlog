@@ -1,0 +1,30 @@
+<h2>Exception should be passed as the first argument to the log method</h2>
+
+<p>
+  When logging an exception, the <code>Exception</code> object must be passed as the
+  <strong>first</strong> argument to the NLog logging method.  NLog recognises the first
+  argument specially: if it is an <code>Exception</code>, NLog captures the full
+  exception details, message, and stack trace in dedicated log-event properties.
+</p>
+
+<p>
+  Passing the exception as any other argument causes it to be serialised as a plain
+  string via <code>ToString()</code> and the rich exception metadata (stack trace,
+  inner exceptions) is lost.
+</p>
+
+<h3>Non-compliant code</h3>
+<pre>
+catch (Exception ex)
+{
+    logger.Error("Order {OrderId} processing failed: {Error}", orderId, ex);
+}
+</pre>
+
+<h3>Compliant code</h3>
+<pre>
+catch (Exception ex)
+{
+    logger.Error(ex, "Order {OrderId} processing failed", orderId);
+}
+</pre>

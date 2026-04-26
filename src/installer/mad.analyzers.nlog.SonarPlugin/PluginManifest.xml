@@ -1,0 +1,12 @@
+<!-- PluginManifest.xml -->
+<AnalyzerPlugin>
+  <Key>mad.analyzers.nlog</Key>
+  <Version>1.0.0</Version>
+  <StaticResourceName>static/mad.analyzers.nlog.zip</StaticResourceName>
+  <PackageId>mad.analyzers.nlog</PackageId>
+  <PackageVersion>1.0.0</PackageVersion>
+  <NuGetPackageSource>https://api.nuget.org/v3/index.json</NuGetPackageSource>
+  <PluginName>MAD NLog Analyzers</PluginName>
+  <PluginDescription>Roslyn-based analyzers for common NLog logging mistakes.</PluginDescription>
+  <SqMinVersion>9.9</SqMinVersion>
+</AnalyzerPlugin>

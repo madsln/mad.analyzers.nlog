@@ -1,0 +1,18 @@
+<h2>Named placeholders in log message templates should not be purely numeric</h2>
+
+<p>
+  Named placeholders in NLog message templates should have descriptive, non-numeric
+  names.  A placeholder such as <code>{0}</code> or <code>{1}</code> looks like a
+  <code>string.Format</code> index and does not produce a meaningful property name in
+  the structured log event, undermining the value of structured logging.
+</p>
+
+<h3>Non-compliant code</h3>
+<pre>
+logger.Info("Processing order {0} for customer {1}", orderId, customerId);
+</pre>
+
+<h3>Compliant code</h3>
+<pre>
+logger.Info("Processing order {OrderId} for customer {CustomerId}", orderId, customerId);
+</pre>

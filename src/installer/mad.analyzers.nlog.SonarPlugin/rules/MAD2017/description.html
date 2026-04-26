@@ -1,0 +1,19 @@
+<h2>Log message template parameter count does not match supplied arguments</h2>
+
+<p>
+  The number of parameters supplied to the logging method must match the number of
+  named placeholders in the message template.  A mismatch causes either missing values
+  in the structured log event (too few arguments) or silently dropped arguments
+  (too many arguments), making log output unreliable and difficult to diagnose.
+</p>
+
+<h3>Non-compliant code</h3>
+<pre>
+// Template has 2 placeholders but only 1 argument is supplied
+logger.Info("User {UserId} logged in from {IpAddress}", userId);
+</pre>
+
+<h3>Compliant code</h3>
+<pre>
+logger.Info("User {UserId} logged in from {IpAddress}", userId, ip);
+</pre>
