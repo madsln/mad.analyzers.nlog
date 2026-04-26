@@ -46,8 +46,14 @@ jobs:
         with:
           dotnet-version: '10.0.x'
 
+      - name: Restore dependencies
+        run: dotnet restore mad.analyzers.sln
+
+      - name: Build solution
+        run: dotnet build mad.analyzers.sln --no-restore --configuration Release
+
       - name: Build package (pack)
-        run: dotnet pack src/package/mad.analyzers.nlog.Package/mad.analyzers.nlog.Package.csproj --configuration Release --output ./nupkgs
+        run: dotnet pack src/package/mad.analyzers.nlog.Package/mad.analyzers.nlog.Package.csproj --configuration Release --no-build --output ./nupkgs
 
       - name: Push package to NuGet
         run: dotnet nuget push ./nupkgs/*.nupkg --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGETORGAPIKEY }}
