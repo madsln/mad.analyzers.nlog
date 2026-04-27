@@ -20,17 +20,6 @@ It was modified to fit the `NLog` logging API.
 
 Code fixes are currently not supported nor planned.
 
-## Usage of AI
-
-This project heavily relied on the use of Github Copilot along with the model Claude Sonnet 4.6.
-It was used as a playground to using copilot but also learning how to develop a dotnet analyzer.
-
-The repository features a lot of definition, adr and journal documents which were part of my approach of using AI effectively here.
-From my point of view it seemed to have an impact on the stability of quality and results during development.
-
-Improvements for the future would most likely be to also create some basic rules and instructions files for copilot to achieve a more consistent code style.
-And also establish some coding-conventions.
-
 ## Demo / Test Pipeline
 
 The project uses a two-stage pipeline to keep demo code and unit tests in sync. Demo files act as **living documentation** (they are compilable, IDE-navigable C# files that trigger the analyzer in real-time) and as the **data source** for the test suite.
@@ -104,3 +93,14 @@ Each generated test method:
 - Calls `VerifyCS.VerifyAnalyzerAsync(source)` — without expected diagnostics for `nodiag`, or with one `VerifyCS.Diagnostic(…).WithLocation(N).WithArguments(…)` per header line for `diagnostics`.
 
 > ℹ️ The generated files under `generated/` are committed to source control. Re-running `TestDataGen` after modifying a demo file must be done before opening a pull request so that tests and demo files stay in sync.
+
+## Usage of AI
+
+This project heavily relied on the use of Github Copilot along with the model Claude Sonnet 4.6.
+It was used as a playground to using copilot but also learning how to develop a dotnet analyzer.
+
+The repository features a lot of definition, adr and journal documents which were part of my approach of using AI effectively here.
+From my point of view it seemed to have an impact on the stability of quality and results during development.
+
+Improvements for the future would most likely be to also create some basic rules and instructions files for copilot to achieve a more consistent code style.
+And also establish some coding-conventions.

@@ -20,6 +20,7 @@
     <PackageTags>analyzer roslyn nlog logging structured-logging code-smell</PackageTags>
     <DevelopmentDependency>true</DevelopmentDependency>
     <NoPackageAnalysis>true</NoPackageAnalysis>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
 
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_AddAnalyzersToOutput</TargetsForTfmSpecificContentInPackage>
   </PropertyGroup>
@@ -36,6 +37,11 @@
       <PackagePath>analyzers/dotnet/cs/</PackagePath>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="$(RepositoryRoot)build\bin\$(Configuration)\mad.analyzers.common\netstandard2.0\mad.analyzers.common.dll">
+      <Pack>true</Pack>
+      <PackagePath>analyzers/dotnet/cs/</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -46,6 +52,7 @@
     <None Include="$(RepositoryRoot)LICENSE.txt" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
     <None Include="$(RepositoryRoot)THIRD-PARTY-NOTICES.txt" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
     <None Include="$(RepositoryRoot)RELEASE_NOTES.md" CopyToOutputDirectory="PreserveNewest" Pack="true" PackagePath="" />
+    <None Include="README.md" Pack="true" PackagePath="" />
   </ItemGroup>
 
   <Target Name="_ReadReleaseNotes" BeforeTargets="GenerateNuspec">
@@ -60,6 +67,7 @@
   <Target Name="_AddAnalyzersToOutput">
     <ItemGroup>
       <TfmSpecificPackageFile Include="$(OutputPath)\mad.analyzers.nlog.analyzer.dll" PackagePath="analyzers/dotnet/cs" />
+      <TfmSpecificPackageFile Include="$(OutputPath)\mad.analyzers.common.dll" PackagePath="analyzers/dotnet/cs" />
       <!--<TfmSpecificPackageFile Include="$(OutputPath)\mad.analyzers.nlog.CodeFixes.dll" PackagePath="analyzers/dotnet/cs" />-->
     </ItemGroup>
   </Target>

@@ -2,21 +2,31 @@
 param (
     [Parameter()]
     [switch]
-    $DontRemoveVsData
-)
+    $DontRemoveVsData,
 
-$repositoryRoot = $PSScriptRoot
+    [Parameter()]
+    [string]
+    $Root = (Resolve-Path -Path "$PSScriptRoot\..\..")
+)
 
 Write-Host "Cleaning repository from temporary files"
 Write-Host "################################################################################"
 
 Write-Host "Removing '/build' directory"
-$buildDirectory = Join-Path $repositoryRoot "build"
+$buildDirectory = Join-Path $Root "build"
 Remove-Item $buildDirectory -Recurse -Force -ErrorAction SilentlyContinue
 Write-Host "################################################################################"
 
 Write-Host "Removing 'bin' and 'obj' directories"
 Get-ChildItem -Directory -Recurse -Include bin, obj | ForEach-Object {
+    $directory = $_.FullName
+    Write-Host "- removing '$directory'"
+    Remove-Item -Recurse $directory -Force
+}
+Write-Host "################################################################################"
+
+Write-Host "Removing 'TestResults' directories"
+Get-ChildItem -Directory -Recurse -Include TestResults | ForEach-Object {
     $directory = $_.FullName
     Write-Host "- removing '$directory'"
     Remove-Item -Recurse $directory -Force

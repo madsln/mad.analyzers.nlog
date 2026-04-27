@@ -1,3 +1,6 @@
+# Version 1.0.1
+- Fixed missing DLL in NuGet package
+
 # Version 1.0.0
 - Added `MAD2256`: detect inline serialization of complex types in logging calls
 - Added `MAD2255`: detect exception misplacement in logging calls

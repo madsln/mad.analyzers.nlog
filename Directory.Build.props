@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <CommonVersion>1.0.0</CommonVersion>
+        <CommonVersion>1.0.1</CommonVersion>
 
         <Version>$(CommonVersion)</Version>
     </PropertyGroup>

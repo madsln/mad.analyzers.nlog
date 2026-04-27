@@ -1,6 +1,6 @@
 # ADR-001: Downgrade von Roslyn 5.3.0 auf 4.9.0 für SonarQube-Plugin-Kompatibilität
 
-**Status:** Proposed  
+**Status:** Accepted  
 **Datum:** 2026-04-25
 
 ## Kontext
